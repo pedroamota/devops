@@ -17,7 +17,7 @@ jobs:
       - name: Print current directory
         run: pwd
       - name: Print arquives in directory
-        run: ls
+        run: ls -R
       # 8
       - uses: actions/checkout@v3
       # 9
