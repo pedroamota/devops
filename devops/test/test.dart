@@ -24,10 +24,5 @@ testWidgets('finds AppBar', (tester) async {
   // Find a widget that displays the letter 'H'.
   expect(find.text('Pokedex'), findsOneWidget);
 });
-
-
-
-
-
 */
 }
