@@ -40,7 +40,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarComponent(),
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Pokedex',
+            style: TextStyle(fontSize: 30),
+          ),
+        ),
+      ),
       body: _conteudos.elementAt(abaSelecionada),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: abaSelecionada,
