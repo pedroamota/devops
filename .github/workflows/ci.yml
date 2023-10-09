@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Print current directory
         run: pwd
+      - name: Print arquives in directory
+        run: ls
       # 8
       - uses: actions/checkout@v3
       # 9
