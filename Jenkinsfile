@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'flutter pub get'
-                sh 'flutter build apk'
+                //sh 'flutter build apk'
             }
         }
         stage('Test') {
