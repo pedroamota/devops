@@ -1,23 +1,29 @@
-pipeline{
-
-    agent any
-
-    stages{
-
-        stage('build'){
-            steps{
-                echo 'building...'
-                sh "dart --version"
-                sh "flutter --version"
+pipeline {
+    agent {
+        docker {
+            image 'flutter/flutter:latest'
+        }
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
             }
         }
-        stage('Notification'){
-            steps{
-                echo 'notification...'
-                sh '''
-                cd devops
-                flutter test
-                '''
+        stage('Build') {
+            steps {
+                sh 'flutter pub get'
+                sh 'flutter build apk'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'flutter test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Implement your deployment steps here
             }
         }
     }
