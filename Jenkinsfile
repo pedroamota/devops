@@ -7,8 +7,17 @@ pipeline{
         stage('build'){
             steps{
                 echo 'building...'
-                sh "mvn --version"
-                sh "java --version"
+                sh "dart --version"
+                sh "flutter --version"
+            }
+        }
+        stage('Notification'){
+            steps{
+                echo 'notification...'
+                sh '''
+                cd devops
+                flutter test
+                '''
             }
         }
     }
